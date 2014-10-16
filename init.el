@@ -49,6 +49,7 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'clojure-mode-hook #'enable-paredit-mode)
 
 ;;ido
 (require 'ido)
@@ -56,7 +57,6 @@
 (setq ido-everywhere t)
 (setq ido-ubiquitous t)
 (setq ido-enable-flex-matching t)
-
 
 ;;eldoc
 (require 'eldoc)
@@ -70,6 +70,10 @@
 
 ;;cider
 (require 'cider)
+
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-log-messages t)
 (setq nrepl-hide-special-buffers t)
