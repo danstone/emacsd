@@ -81,8 +81,6 @@
 ;;destroy bars
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-set-key (kbd "F11") 'toggle-full-screen)
-
 
 
 
